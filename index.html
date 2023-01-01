@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LuckySmile - The biggest site with emoticons from symbols</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.css"/>
+</head>
+<body onload="slide()">
+<div class="header">
+    <div class="logo">
+        <img id="logo" src="logo.svg" alt="">
+        <h1 id="title">LuckySmile</h1>
+    </div>
+    <div class="searching">
+        <label>
+            <input id="search" placeholder="Поиск">
+        </label>
+        <img id="imgSearch" src="search.svg" alt="Search">
+    </div>
+</div>
+<div class="scrollMenu1">
+    <a href="#"><p>¯\_(ツ)_/¯</p></a>
+    <a href="#"><p>(* ^ ω ^)</p></a>
+    <a href="#"><p>(´ ∀ ` *)</p></a>
+    <a href="#"><p>٩(◕‿◕｡)۶</p></a>
+    <a href="#"><p>(o･ω･o)</p></a>
+    <a href="#"><p>(⌒▽⌒)☆</p></a>
+    <a href="#"><p><(￣︶￣)></p></a>
+    <a href="#"><p>(￣ω￣)</p></a>
+    <a href="#"><p>ヽ(*・ω・)ﾉ</p></a>
+    <a href="#"><p>(＠＾◡＾)</p></a>
+    <a href="#"><p>(^人^)</p></a>
+    <a href="#"><p>(o´▽`o)</p></a>
+    <a href="#"><p>(*´▽`*)</p></a>
+</div>
+<div class="scrollMenu2">
+    <a href="#"><p>(≧◡≦)</p></a>
+    <a href="#"><p>｡ﾟ( ﾟ^∀^ﾟ)ﾟ｡</p></a>
+    <a href="#"><p>(o´∀`o)</p></a>
+    <a href="#"><p>(⌒ω⌒)</p></a>
+    <a href="#"><p>(＾▽＾)</p></a>
+    <a href="#"><p>╰(▔∀▔)╯</p></a>
+    <a href="#"><p>(─‿‿─)</p></a>
+    <a href="#"><p>(*^‿^*)</p></a>
+    <a href="#"><p>ヽ(o^ ^o)ﾉ</p></a>
+    <a href="#"><p>(☆▽☆)</p></a>
+    <a href="#"><p>(*≧ω≦*)</p></a>
+    <a href="#"><p>(◕‿◕)</p></a>
+    <a href="#"><p>(✯◡✯)</p></a>
+</div>
+<div class="scrollMenu3">
+    <a href="#"><p>(」°ロ°)」</p></a>
+    <a href="#"><p>(￣ヘ￣)</p></a>
+    <a href="#"><p>(︶︹︺)</p></a>
+    <a href="#"><p>ψ( ` ∇ ´ )ψ</p></a>
+    <a href="#"><p>(＃＞＜)</p></a>
+    <a href="#"><p>(⁄ ⁄•⁄ω⁄•⁄ ⁄)</p></a>
+    <a href="#"><p>( ◡‿◡ *)</p></a>
+    <a href="#"><p>(ﾉ´ з `)ノ</p></a>
+    <a href="#"><p>(¬‿¬ )</p></a>
+    <a href="#"><p>(￢‿￢ )</p></a>
+    <a href="#"><p>(╯✧▽✧)╯</p></a>
+    <a href="#"><p>\(★ω★)/</p></a>
+    <a href="#"><p>(︶︹︺)</p></a>
+</div>
+<div class="scrollMenu4">
+    <a href="#"><p>(＞﹏＜)</p></a>
+    <a href="#"><p>(ᗒᗣᗕ)՞</p></a>
+    <a href="#"><p>(个_个)</p></a>
+    <a href="#"><p>~(>_<~)</p></a>
+    <a href="#"><p>(×_×)</p></a>
+    <a href="#"><p>(×﹏×)</p></a>
+    <a href="#"><p>(＋_＋)</p></a>
+    <a href="#"><p>(☆_@)</p></a>
+    <a href="#"><p>＼(〇_ｏ)／</p></a>
+    <a href="#"><p>ヽ(ー_ー )ノ</p></a>
+    <a href="#"><p>╮(￣～￣)╭</p></a>
+    <a href="#"><p>┐( ˘ ､ ˘ )┌</p></a>
+    <a href="#"><p>(•ิ_•ิ)?</p></a>
+</div>
+
+
+<div class="notify">
+    <p>Смайлик успешно скопирован</p>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script>
+<script>
+    function slide(){
+        $(".notify").slideUp()
+    }
+</script>
+<script type="application/javascript">
+    (function ($) {
+        $(window).on("load", function () {
+            $(".scrollMenu1, .scrollMenu2, .scrollMenu3, .scrollMenu4").mCustomScrollbar({
+                axis: "x",
+                scrollInertia: 500,
+                autoHideScrollbar: true,
+                mouseWheel: {scrollAmount: 250}
+            });
+        });
+    })(jQuery);
+</script>
+<script type="application/javascript">
+    var buttons = document.querySelectorAll('a');
+    buttons.forEach(button =>
+        button.addEventListener('click', function () {
+            var textArea = document.createElement("textarea");
+            textArea.value = button.innerText;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            $(".notify").slideDown()
+            setTimeout(() => $(".notify").slideUp(), 1500);
+        }));
+</script>
+
+<script>
+    function isTouchDeviceCheck() {
+        var prefixes = ' -webkit- -moz- -o- -ms- '.split(' ');
+        var mq = function(query) {
+            return window.matchMedia(query).matches;
+        }
+
+        if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+            return true;
+        }
+
+        // include the 'heartz' as a way to have a non matching MQ to help terminate the join
+        // https://git.io/vznFH
+        var query = ['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join('');
+        return mq(query);
+    }
+
+    // Добавляем класс к body в зависимости от типа экрана
+    if (isTouchDeviceCheck()) {
+        document.body.classList.add("touch-device");
+    } else {
+        document.body.classList.add("pointer-device");
+    }
+</script>
+
+</html>
